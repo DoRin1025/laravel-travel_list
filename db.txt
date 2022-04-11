@@ -1,0 +1,6 @@
+CREATE DATABASE travel_list;
+
+CREATE TABLE travel_list.places ( id INT AUTO_INCREMENT, name VARCHAR(255), visited BOOLEAN, PRIMARY KEY(id) );
+
+INSERT INTO travel_list.places (name, visited)  VALUES ("Tokyo", false), ("Budapest", true), ("Nairobi", false), ("Berlin", true), ("Lisbon", true), ("Denver", false), ("Moscow", false), ("Olso", false), ("Rio", true), ("Cincinnati", false), ("Helsinki", false);
+

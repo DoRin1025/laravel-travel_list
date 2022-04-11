@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  php:
+    image: laravel-web:latest
+    restart: always
+    ports:
+      - 8000:80
+    environment:
+      - APP_KEY="base64:G3NDCPXF87TdfpBcdcUr63jYgqFibh7QqtUsR2vu4/4="
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_PORT=3306
+      - DB_HOST=mysql
+      - DB_DATABASE
+      - DB_USERNAME
+      - DB_PASSWORD
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./travel_list.sql:/docker-entrypoint-initdb.d/init.sql

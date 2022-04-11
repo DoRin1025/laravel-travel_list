@@ -1,0 +1,13 @@
+php:
+  repository: "dorin1025/laravel-web"
+  tag: "2"
+  fpmEnabled: false
+  envVars:
+    - name: APP_ENV
+      value: production
+    - name: APP_DEBUG
+      value: true
+    - name: DB_PORT
+      value: 3306
+    - name: DB_HOST
+      value: localhost
